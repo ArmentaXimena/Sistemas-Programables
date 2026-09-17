@@ -21,7 +21,7 @@ Comparar el comportamiento de `delay()` y `millis()` para controlar tiempos en A
 
 ## Diagrama del circuito
 
-![Diagrama del circuito](Diagrama/Delay.jpeg)
+![Diagrama del circuito](Diagrama/Delay.jpg).
 
 Diagrama de referencia con Arduino UNO. En la práctica se utilizó el Arduino UNO R4 WiFi.
 
