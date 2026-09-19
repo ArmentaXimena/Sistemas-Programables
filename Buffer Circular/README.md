@@ -39,7 +39,7 @@ La interrupción solo guarda el instante del evento y sale; `loop()` extrae un e
 
 ## Evidencias de armado
 
-![Armado del circuito](Diagrama/Codigo.jpeg)
+![Armado del circuito](Codigo/Codigo.jpeg)
 
 - [Captura del código y el Monitor Serial en Arduino IDE](Codigo/Codigo.jpeg).
 
