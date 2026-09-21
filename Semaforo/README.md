@@ -40,6 +40,9 @@ Diagrama de referencia para la distribución de los cinco LED, las resistencias 
 
 El botón se lee de forma continua con un filtro de antirrebote de 40 ms. Una pulsación válida durante el verde o el amarillo guarda la solicitud de cruce; las pulsaciones durante el rojo se ignoran.
 
+## Video del funcionamiento
+Muestra el circuito armado y en funcionamiento, con el botón presionado en distintos momentos del ciclo para comprobar ambos comportamientos: peatonal en rojo sin solicitud, y peatonal en verde cuando sí se presionó a tiempo: Ver video en YouTube
+
 ## Evidencias de armado
 
 ![Armado del circuito](Diagrama/semaforo.jpg)
