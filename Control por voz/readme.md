@@ -19,13 +19,13 @@ Programar y simular en Arduino el control de un motorreductor de corriente direc
 
 ## Diagrama
 Imagenes del motorreductor armado en Tinkercad y en físico.
-![Diagrama del circuito](Diagrama/Armado del circuito.jpg)
-(Diagrama/Tinkercad_CPV.png)
+![Diagrama del circuito](Diagrama/Armado%20del%20circuito.jpg)
+![Diagrama en Tinkercad](Diagrama/Tinkercad_CPV.png)
 
 ## Código
 
 Este programa convierte un Arduino UNO R4 WiFi en un servidor web controlado desde una app de MIT App Inventor. Por Wi-Fi recibe órdenes para encender o apagar un LED externo y la matriz LED de la placa. También controla un motor de CD con un puente H L298N, que puede avanzar o retroceder en tres velocidades o detenerse, y después de cada orden le responde a la app con un mensaje de confirmación.
-[motorvoz.ino](codigos/ControlPorVoz.ino)
+[ControlPorVoz.ino](Codigo/ControlPorVoz.ino)
 
 
 > **Nota:** para que la aplicación funcione, el teléfono y el Arduino deben estar conectados a la misma red WiFi, y la variable `ip` debe tener la dirección que el Arduino muestre en el monitor serie.
