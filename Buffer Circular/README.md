@@ -25,7 +25,7 @@ El proyecto simula el sensor de piezas de una banda transportadora: cada vez que
 ## Diagrama del circuito
 
 ![Diagrama del circuito](Diagrama/Diagrama.jpeg)
-<img src="Diagrama/armado_1.png" width="320"> <img src="Diagrama/armado_2.png" width="320">
+
 
 ## Código
 Implementa un arreglo circular de 32 posiciones alimentado por
