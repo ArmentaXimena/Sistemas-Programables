@@ -25,18 +25,11 @@ El proyecto permite posicionar un servomotor desde una página web. El Arduino U
 
 ## Diagrama del circuito
 
-<img src="Diagrama/diagrama_proto.png" width="700">
+![Diagrama del circuito](diagrama/Captura%20de%20pantalla%202026-09-14%20212836.png)
 
-<img src="Diagrama/vista_previa_esquematico.png" width="520">
+![Diagrama 2](diagrama/WhatsApp%20Image%202026-09-14%20at%201.33.41%20PM.jpeg)
 
-Archivo editable de Fritzing: [diagrama_servo.fzz](Diagrama/diagrama_servo_R4WiFi.fzz)
-
-> Fritzing no trae el R4 WiFi en su librería oficial, pero existe una pieza hecha por la comunidad (Peter Van Epp, del foro de Fritzing)
-<img src="Diagrama/armado_1.jpg" width="260"> <img src="Diagrama/armado_2.jpg" width="260"> <img src="Diagrama/armado_3.jpg" width="260">
-
-### Diagrama de bloques
-
-<img src="Diagrama/diagrama_bloques1.png" width="700">
+![Diagrama 3](diagrama/WhatsApp%20Image%202026-09-14%20at%201.33.41%20PM%20(1).jpeg)
 
 ## Código
 
