@@ -1,77 +1,66 @@
-# Control por voz con Arduino
-
-Encendido de un LED y una matriz LED, y control de un motorreductor en tres velocidades.
+# Control de un motorreductor por voz con Arduino y puente H L293D
 
 ## Descripción
 
-Aplicación creada en **MIT App Inventor** que envía comandos de voz por Wi-Fi a un **Arduino UNO R4 WiFi** para encender y apagar un LED y la matriz integrada, además de controlar el avance, retroceso y paro de un motorreductor.
+El objetivo de esta práctica es controlar un motorreductor por medio de comandos de voz. El Arduino Uno R4 WiFi recibe la orden y, a través del puente H L293D, hace que el servomotor avance, retroceda o se detenga.
 
 ## Objetivos de aprendizaje
 
-Utilizar comandos de voz para controlar dispositivos con Arduino, comunicar una aplicación mediante Wi-Fi y programar tres niveles de velocidad usando PWM y un puente H.
+Programar y simular en Arduino el control de un motorreductor de corriente directa usando un puente H (L293D): definir el sentido de giro con las salidas digitales de los pines 7 y 8 (`digitalWrite()`) y regular la velocidad con una señal PWM en el pin 9 (`analogWrite()`), para que el motor avance, retroceda o se detenga según el comando de voz recibido.
 
 ## Material utilizado
 
-- Arduino UNO R4 WiFi y cable USB.
-- Puente H L298N.
-- Motorreductor con rueda.
-- Batería Energizer Max de 9 V.
-- Cables Dupont.
-- Teléfono Android con MIT AI2 Companion.
-- Computadora con Arduino IDE y conexión Wi-Fi.
+* Arduino Uno R4 WiFi
+* Puente H (en la simulación de Tinkercad se usó el circuito integrado L293D)
+* motorreductor
+* Pila de 9 V
+* Protoboard
+* Cables Dupont
 
-## Diagrama del circuito
-
-![Diagrama del circuito](Diagrama/Tinkercad_CPV.png)
-
-Representación en Tinkercad con Arduino UNO y L293D como referencia. En la práctica se utilizaron UNO R4 WiFi y L298N.
+## Diagrama
+Imagenes del motorreductor armado en Tinkercad y en físico.
+![Diagrama del circuito](Diagrama/Armado del circuito.jpg)
+(Diagrama/Tinkercad_CPV.png)
 
 ## Código
 
-- [Programa de Arduino](Codigo/ControlPorVoz.ino).
-- [Diseño y bloques de App Inventor](Codigo/AppInventor/).
+Este programa convierte un Arduino UNO R4 WiFi en un servidor web controlado desde una app de MIT App Inventor. Por Wi-Fi recibe órdenes para encender o apagar un LED externo y la matriz LED de la placa. También controla un motor de CD con un puente H L298N, que puede avanzar o retroceder en tres velocidades o detenerse, y después de cada orden le responde a la app con un mensaje de confirmación.
+[motorvoz.ino](codigos/ControlPorVoz.ino)
 
-El LED utiliza el pin **4**. El puente H utiliza **ENA = 9**, **IN1 = 8** e **IN2 = 7**.
 
-## Video del funcionamiento
+> **Nota:** para que la aplicación funcione, el teléfono y el Arduino deben estar conectados a la misma red WiFi, y la variable `ip` debe tener la dirección que el Arduino muestre en el monitor serie.
 
-[Ver video en YouTube](https://youtu.be/HVi7jjqaD8g)
+## Video
+En el video se muestra el funcionamiento del motorreductor controlado por comandos de voz mediante Arduino UNO R4 WiFi, puente H L293D y una aplicación desarrollada en MIT App Inventor, demostrando el avance, retroceso, ajuste de velocidad y detención del motor.
 
-## Evidencias de armado
-
-![Armado del circuito](Diagrama/Armado%20del%20circuito.jpg)
-
-- [Representación del circuito](Diagrama/Tinkercad_CPV.png).
-- [Diseño de la aplicación](Codigo/AppInventor/Dise%C3%B1o_App_CPV.png).
-- [Pruebas en el Monitor Serie](Resultados/Monitor_Serial.png).
-
-## Reporte
-
-[Reporte de la práctica.pdf](Reporte/Reporte_Control_Voz_Ximena_Armenta_Davila.pdf)
-
-Incluye:
-
-- Objetivo, materiales y procedimiento.
-- Gráficas y tablas de datos.
-- Observaciones sobre el comportamiento del sistema.
-
-## Conclusiones
-
-La práctica permitió aprender a comunicar una aplicación con Arduino y controlar dispositivos mediante la voz. También ayudó a comprender el uso del puente H y del PWM. Durante las pruebas se observó que recibir un comando no garantiza que el motor se mueva, por lo que es necesario revisar las conexiones y la alimentación.
+* [Readme](video/Readme.txt)
+* [Ver video en YouTube](https://youtu.be/HVi7jjqaD8g?si=P1OTq7G0HO8tRpMl)
 
 ## Resultados
 
-Se confirmó el encendido del LED y la matriz. El Monitor Serie mostró una IP válida y recibió las órdenes de avance en tres niveles y de paro. El funcionamiento físico del motor quedó pendiente de confirmar.
+El motorreductor respondió a los comandos de voz enviados desde la app para avanzar, retroceder y detenerse. El sentido de giro se controla invirtiendo los pines 8 y 7 del puente H L293D, y la velocidad, con la señal PWM del pin 9:
 
-| Nivel | PWM |
-|---|---|
-| Detenido | 0 |
-| Baja | 110 |
-| Media | 180 |
-| Máxima | 255 |
+| Nivel     | PWM (0–255) | Ciclo de trabajo | Comportamiento      |
+|-----------|-------------|------------------|---------------------|
+| Sin señal | 0           | 0 %              | Motor detenido      |
+| Baja      | 110         | 43.1 %           | Umbral de arranque  |
+| Media     | 180         | 70.6 %           | Giro intermedio     |
+| Máxima    | 255         | 100 %            | Giro a plena marcha |
 
-Estos valores corresponden al control programado, no a velocidades medidas.
+- Con valores de PWM menores a 110 el motor no gira, porque la fuerza no alcanza a vencer la fricción de los engranajes del reductor.
+- Arriba de ese umbral, la velocidad aumenta con el PWM, y los tres niveles funcionan igual en avance y en retroceso.
+- El motor necesita alimentación externa (pila de 9 V). Los 5 V del Arduino solo alimentan la lógica del L293D.
+- El GND del Arduino, el negativo de la pila y las tierras del L293D deben ir a un negativo común; si no, el motor no responde.
+- La app y el Arduino deben estar en la misma red Wi-Fi, con la IP correcta configurada en la app. Si el comando de voz no coincide con ninguna ruta, la app avisa que no entendió y no envía la petición.
 
-- [Monitor Serie](Resultados/Monitor_Serial.png).
-- [Resultados de la práctica.pdf](Resultados/ResultadosCPV.pdf).
+## Reporte
+
+Reporte formal con introducción, metodologia utilizada, capturas de la web funcionando, análisis de resultados y conclusiones individuales. 
+
+[Reporte.pdf](Reporte/Reporte_Control_Voz_Ximena_Armenta_Davila.pdf)
+
+## Conclusiones
+
+La práctica permitió comprender cómo se controla un motor de corriente directa con Arduino por medio de un puente H: con salidas digitales (`digitalWrite`) se define el sentido de giro y con una señal PWM (`analogWrite`) se regula la velocidad, de modo que cada comando de voz se traduce en una acción del motor. También quedó clara la importancia de alimentar el motor con una fuente externa, ya que los pines del Arduino no pueden entregar la corriente que necesita, y de unir las tierras del Arduino, la pila y el L293D en un negativo común, porque sin esa referencia compartida el puente H no interpretaría correctamente las señales del Arduino.
+
 
