@@ -1,2 +1,2 @@
 # Video
-Enlace del video: [https://youtu.be/HVi7jjqaD8g](https://youtu.be/Lg2vXyP2IQk)
+Enlace del video: https://youtu.be/o6up5xnkzOA?si=dYZBjHPmNA9fu-W4
