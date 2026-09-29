@@ -19,10 +19,10 @@ El proyecto conecta un lector RFID RC522 a un Arduino UNO R4 WiFi mediante el bu
 
 | Carpeta | Contenido |
 |---|---|
-| [`codigo/`](codigo/) | Programa de Arduino `control_acceso_rfid.ino` y captura del código (`codigo.jpeg`). |
-| [`diagrama-y-fotografias/`](diagrama-y-fotografias/) | Diagrama de conexiones (`diagrama.jpeg`) y fotografías del montaje (`d1.jpeg`, `d2.jpeg`). |
-| [`reporte/`](reporte/) | Reporte completo de la práctica en PDF (`Reporte_Control_Acceso_RFID.pdf`). |
-| [`video/`](video/) | Enlace al video con el funcionamiento. |
+| [`Codigo/`](Codigo/) | Programa de Arduino `control_acceso_rfid.ino` y captura del código (`codigo.jpeg`). |
+| [`Diagrama/`](Diagrama/) | Diagrama de conexiones (`diagrama.jpeg`) y fotografías del montaje (`d1.jpeg`, `d2.jpeg`). |
+| [`Reporte/`](Reporte/) | Reporte completo de la práctica en PDF (`Reporte_Control_Acceso_RFID.pdf`). |
+| [`Video/`](Video/) | Enlace al video con el funcionamiento. |
 
 ## Material
 
@@ -53,13 +53,13 @@ El proyecto conecta un lector RFID RC522 a un Arduino UNO R4 WiFi mediante el bu
 
 Los cátodos de los LEDs van a GND.
 
-![Diagrama de conexiones](diagrama-y-fotografias/diagrama.jpeg)
+![Diagrama de conexiones](Diagrama/diagrama.jpeg)
 
 ## Cómo usarlo
 
 1. Arma el circuito según el diagrama y la tabla de conexiones.
 2. En el Arduino IDE instala la librería **MFRC522** (*Sketch > Include Library > Manage Libraries*).
-3. Abre `codigo/control_acceso_rfid.ino`, selecciona la placa **Arduino UNO R4 WiFi** y el puerto correcto, y súbelo.
+3. Abre `Codigo/control_acceso_rfid.ino`, selecciona la placa **Arduino UNO R4 WiFi** y el puerto correcto, y súbelo.
 4. Abre el Monitor Serie a 9600 baudios. Debe aparecer `Comunicacion OK con el lector RC522.`
 5. Acerca tu llavero al lector y anota el UID que se muestra.
 6. Para autorizar tu propio llavero, cambia este arreglo en el código y vuelve a subir el programa:
@@ -81,13 +81,13 @@ Se probaron dos llaveros iguales, que el lector distingue por su UID:
 
 **Monitor Serie durante las pruebas:**
 
-![Monitor Serie](codigo/codigo.jpeg)
+![Monitor Serie](Codigo/codigo.jpeg)
 
 **Circuito en funcionamiento:**
 
 | Llavero no autorizado (LED rojo) | Llavero autorizado (LED verde) |
 |---|---|
-| ![LED rojo](diagrama-y-fotografias/d1.jpeg) | ![LED verde](diagrama-y-fotografias/d2.jpeg) |
+| ![LED rojo](Diagrama/d1.jpeg) | ![LED verde](Diagrama/d2.jpeg) |
 
 ## Video
 
@@ -95,7 +95,5 @@ Enlace al video del funcionamiento: [Ver en YouTube](https://youtu.be/o6up5xnkzO
 
 ## Reporte
 
-El reporte completo incluye introducción, objetivos, desarrollo, análisis de resultados, cuestionario, conclusiones individuales y referencias: [`reporte/Reporte_Control_Acceso_RFID.pdf`](reporte/Reporte_Control_Acceso_RFID.pdf).
-
-
+El reporte completo incluye introducción, objetivos, desarrollo, análisis de resultados, cuestionario, conclusiones individuales y referencias: [`Reporte/Reporte_Control_Acceso_RFID.pdf`](Reporte/Reporte_Control_Acceso_RFID.pdf).
 
