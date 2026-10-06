@@ -17,8 +17,8 @@ Práctica de la materia **Sistemas Programables**, Ingeniería en Sistemas Compu
 
 | Carpeta | Contenido |
 |---|---|
-| [`Codigo/`](Codigo/) | Programa de Arduino `Estacion_BMP280.ino` y captura del Monitor Serie (`Terminal.jfif`). |
-| [`Diagrama/`](Diagrama/) | Diagrama de conexiones (`tk.jfif`) y fotografías del montaje (`D1.jfif`, `D2.jfif`). |
+| [`Codigo/`](Codigo/) | Programa de Arduino `Estacion_BMP280.ino` y captura del Monitor Serie (`Terminal.jpg`). |
+| [`Diagrama/`](Diagrama/) | Diagrama de conexiones (`tk.jpg`) y fotografías del montaje (`D1.jpg`, `D2.jpg`). |
 | [`Reporte/`](Reporte/) | Reporte completo de la práctica en PDF (`Reporte_Sensor_Ambiental_BMP280.pdf`). |
 | [`Video/`](Video/) | Enlace al video con el funcionamiento. |
 
