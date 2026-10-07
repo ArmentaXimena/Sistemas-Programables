@@ -8,7 +8,7 @@ Práctica 3.2.3 · Sistemas Programables · Instituto Tecnológico de Mazatlán
 
 ## Diagrama
 
-![Conexión I2C entre el Arduino UNO R4 WiFi y el MPU-6050](img/tink.jpeg)
+![Conexión I2C entre el Arduino UNO R4 WiFi y el MPU-6050](Diagrama/tink.jpeg)
 
 ## Reporte
 
